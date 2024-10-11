@@ -1,0 +1,10 @@
+[project]
+name = "bookshelf-rcmip-emissions"
+version = "0.1.0"
+description = "Emissions dataset from RCMIP"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "bookshelf>=0.3.0",
+    "scmdata>=0.16.1",
+]
