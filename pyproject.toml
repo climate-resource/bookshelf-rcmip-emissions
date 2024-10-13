@@ -5,17 +5,15 @@ description = "Emissions dataset from RCMIP"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "bookshelf>=0.3.0",
+    "bookshelf-producer>=0.3.1b3",
     "scmdata>=0.16.1",
 ]
-
-
 
 [tool.ruff]
 src = [
     "src",
 ]
-target-version = "py39"
+target-version = "py311"
 line-length = 88
 
 [tool.ruff.lint]
@@ -36,6 +34,7 @@ unfixable = [
     "PD002",
 ]
 ignore = [
+    "D100",
     "D200",
     "D400",
     "UP007",
@@ -46,17 +45,6 @@ ignore = [
     "D",
     "S101",
     "PLR2004",
-]
-"docs/*" = [
-    "D100",
-    "E402",
-    "S101",
-]
-"scripts/*" = [
-    "S101",
-]
-"stubs/*" = [
-    "PLR0913",
 ]
 
 [tool.ruff.lint.isort]

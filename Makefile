@@ -14,6 +14,8 @@ for line in sys.stdin:
 endef
 export PRINT_HELP_PYSCRIPT
 
+export BOOKSHELF_NOTEBOOK_DIRECTORY = src
+
 
 .PHONY: help
 help:  ## print short description of each target
@@ -46,8 +48,8 @@ virtual-environment:  ## update virtual environment, create a new one if it does
 	uv run pre-commit install
 
 run:  ## Generate the book
-	uv run bookshelf run
+	uv run bookshelf run rcmip-emissions
 
 
 publish:  ## publish a new release of the project
-	uv run bookshelf publish
+	uv run bookshelf publish rcmip-emissions
