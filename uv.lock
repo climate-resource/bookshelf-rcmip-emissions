@@ -180,7 +180,7 @@ wheels = [
 
 [[package]]
 name = "bookshelf-rcmip-emissions"
-version = "0.1.1a1"
+version = "0.1.1"
 source = { virtual = "." }
 dependencies = [
     { name = "bookshelf-producer" },

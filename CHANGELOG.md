@@ -21,6 +21,13 @@ from the examples given in that link.
 
 <!-- towncrier release notes start -->
 
+## RCMIP Emissions v0.1.1 (2024-10-14)
+
+### Bug Fixes
+
+- Include tarball of built data as part of a release ([#4](https://github.com/climate-resource/bookshelf-rcmip-emissions/pull/4))
+
+
 ## RCMIP Emissions v0.1.0 (2024-10-14)
 
 ### Improvements
