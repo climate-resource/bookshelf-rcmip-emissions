@@ -48,9 +48,6 @@ jobs:
 
           # Bump
           uv run pdm bump ${{ github.event.inputs.bump_rule }}
-          cd packages/bookshelf-producer
-          uv run pdm bump ${{ github.event.inputs.bump_rule }}
-          cd ../..
 
           # regex supports 1.1.1a1, 1.1.1b1, 1.1.1rc1
           NEW_VERSION=`sed -ne 's/^version = "\([0-9\.abrc]*\)"/\1/p' pyproject.toml`
