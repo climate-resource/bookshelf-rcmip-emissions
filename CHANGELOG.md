@@ -20,3 +20,11 @@ from the examples given in that link.
 -->
 
 <!-- towncrier release notes start -->
+
+## RCMIP Emissions v0.1.0 (2024-10-14)
+
+### Improvements
+
+- Adds a dependency on the bookshelf-producer package. ([#1](https://github.com/climate-resource/bookshelf-rcmip-emissions/pull/1))
+- Add a basic CI to verify the notebooks are working as expected ([#2](https://github.com/climate-resource/bookshelf-rcmip-emissions/pull/2))
+- Use get-version script instead of a sed one-liner ([#3](https://github.com/climate-resource/bookshelf-rcmip-emissions/pull/3))
