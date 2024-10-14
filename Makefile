@@ -23,16 +23,16 @@ help:  ## print short description of each target
 
 .PHONY: checks
 checks:  ## run all the linting checks of the codebase
-	@echo "=== pre-commit ==="; uv run pre-commit run --all-files || echo "--- pre-commit failed ---" >&2; \
+	@echo "=== pre-commit ==="; uvx pre-commit run --all-files || echo "--- pre-commit failed ---" >&2; \
 		echo "======"
 
 .PHONY: ruff-fixes
 ruff-fixes:  ## fix the code using ruff
     # format before and after checking so that the formatted stuff is checked and
     # the fixed stuff is formatted
-	uv run ruff format
-	uv run ruff check --fix
-	uv run ruff format
+	uvx ruff@0.6.9 format
+	uvx ruff@0.6.9 check --fix
+	uvx ruff@0.6.9 format
 
 #.PHONY: test
 #test:  ## run the tests
@@ -40,12 +40,12 @@ ruff-fixes:  ## fix the code using ruff
 
 .PHONY: changelog-draft
 changelog-draft:  ## compile a draft of the next changelog
-	uv run towncrier build --draft
+	uvx towncrier build --draft --version $(shell uv run python scripts/get-version.py)
 
 .PHONY: virtual-environment
 virtual-environment:  ## update virtual environment, create a new one if it doesn't already exist
 	uv sync
-	uv run pre-commit install
+	uvx pre-commit install
 
 run:  ## Generate the book
 	uv run bookshelf run rcmip-emissions -o dist

@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-pre-commit
       - name: mypy
         run: |
-          uv run pre-commit run --all-files
+          uvx pre-commit run --all-files
           uv run mypy src
 
   tests:

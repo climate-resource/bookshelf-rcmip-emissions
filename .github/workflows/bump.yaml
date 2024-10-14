@@ -43,18 +43,17 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "$CI_COMMIT_EMAIL"
 
-          BASE_VERSION=`sed -ne 's/^version = "\([0-9\.a]*\)"/\1/p' pyproject.toml`
+          BASE_VERSION=$(uv run python scripts/get-version.py)
           echo "Bumping from version $BASE_VERSION"
 
           # Bump
           uv run pdm bump ${{ github.event.inputs.bump_rule }}
 
-          # regex supports 1.1.1a1, 1.1.1b1, 1.1.1rc1
-          NEW_VERSION=`sed -ne 's/^version = "\([0-9\.abrc]*\)"/\1/p' pyproject.toml`
+          NEW_VERSION=$(uv run python scripts/get-version.py)
           echo "Bumping to version $NEW_VERSION"
 
           # Build CHANGELOG
-          uv run towncrier build --yes --version v$NEW_VERSION
+          uvx towncrier build --yes --version v$NEW_VERSION
 
           # Commit, tag and push
           git commit -a -m "bump: version $BASE_VERSION -> $NEW_VERSION"
@@ -66,15 +65,14 @@ jobs:
 
           # Bump to alpha (so that future commits do not have the same
           # version as the tagged commit)
-          BASE_VERSION=`sed -ne 's/^version = "\([0-9\.abrc]*\)"/\1/p' pyproject.toml`
+          BASE_VERSION=$(uv run python scripts/get-version.py)
 
           # Bump to pre-release of next version
           uv run pdm bump pre-release --pre alpha
 
-          NEW_VERSION=`sed -ne 's/^version = "\([0-9\.abrc]*\)"/\1/p' pyproject.toml`
+          NEW_VERSION=$(uv run python scripts/get-version.py)
           echo "Bumping version $BASE_VERSION > $NEW_VERSION"
 
           # Commit and push
-          # Skip pre-commit to avoid pixi install throwing weird errors
           git commit -n -a -m "bump(pre-release): version $BASE_VERSION > $NEW_VERSION"
           git push
