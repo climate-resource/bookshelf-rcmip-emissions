@@ -82,5 +82,7 @@ type = [
 
 [tool.uv]
 dev-dependencies = [
+    "mypy>=1.11.2",
     "pre-commit>=4.0.1",
+    "ruff>=0.6.9",
 ]
