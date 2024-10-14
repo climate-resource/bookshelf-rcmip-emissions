@@ -79,3 +79,8 @@ type = [
     { directory = "docs", name = "Improved Documentation", showcontent = true },
     { directory = "trivial", name = "Trivial/Internal Changes", showcontent = false },
 ]
+
+[tool.uv]
+dev-dependencies = [
+    "pre-commit>=4.0.1",
+]

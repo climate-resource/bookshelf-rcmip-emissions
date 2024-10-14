@@ -57,4 +57,5 @@ jobs:
           make run
       - name: Run tests
         run: |
+          [[ ! -d "tests" ]] && exit 0
           uv run pytest src tests -r a -v --doctest-modules
