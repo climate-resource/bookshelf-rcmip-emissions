@@ -1,6 +1,6 @@
 [project]
 name = "bookshelf-rcmip-emissions"
-version = "0.1.1"
+version = "0.1.2a1"
 description = "Emissions dataset from RCMIP"
 readme = "README.md"
 requires-python = ">=3.11"
