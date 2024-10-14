@@ -31,7 +31,7 @@ ruff-fixes:  ## fix the code using ruff
     # format before and after checking so that the formatted stuff is checked and
     # the fixed stuff is formatted
 	uv run ruff format
-	uv run ruff --fix
+	uv run ruff check --fix
 	uv run ruff format
 
 #.PHONY: test
@@ -48,7 +48,7 @@ virtual-environment:  ## update virtual environment, create a new one if it does
 	uv run pre-commit install
 
 run:  ## Generate the book
-	uv run bookshelf run rcmip-emissions
+	uv run bookshelf run rcmip-emissions -o dist
 
 
 publish:  ## publish a new release of the project
