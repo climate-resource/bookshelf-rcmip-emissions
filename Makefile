@@ -48,8 +48,8 @@ virtual-environment:  ## update virtual environment, create a new one if it does
 	uvx pre-commit install
 
 run:  ## Generate the book
-	uv run bookshelf run rcmip-emissions -o dist
+	uv run bookshelf-producer run rcmip-emissions -o dist
 
 
 publish:  ## publish a new release of the project
-	uv run bookshelf publish rcmip-emissions
+	uv run bookshelf-producer publish rcmip-emissions
