@@ -1,0 +1,44 @@
+# The recipe carries every fact about the books this feedstock produces.
+# Format: https://github.com/climate-resource/bookshelf/blob/main/docs/explanation/recipe-format.md
+volume:
+  name: rcmip-emissions
+  maintainers:
+    - name: "Jared Lewis"
+      email: jared.lewis@climate-resource.com
+  keywords:
+    - rcmip
+    - emissions
+    - scenarios
+
+# Defaults for every book
+# Any overrides for a specific book win
+defaults:
+  title: "RCMIP Emissions"
+  description: "Emissions of greenhouse gases and air pollutants from RCMIP, for use in climate models."
+  publisher: RCMIP
+  publisher_url: https://www.rcmip.org
+  homepage_url: https://www.rcmip.org
+  repository_url: https://github.com/climate-resource/bookshelf-rcmip-emissions
+  visibility: public
+  authors:
+    - name: "Zebedee Nicholls"
+  resources:
+    # A resource type never moves between books, so it is stated once here.
+    raw:
+      type: tabular
+
+build:
+  notebook: build.py
+
+# One entry per upstream version. `bookshelf record --version` picks one.
+books:
+  - version: "v5.1.0"
+    license: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    citation: "Zebedee Nicholls. rcmip-emissions v5.1.0. https://www.rcmip.org"
+    description: >-
+      The RCMIP annual mean emissions protocol, version 5.1.0.
+    resources:
+      raw:
+        uri: https://rcmip-protocols-au.s3-ap-southeast-2.amazonaws.com/v5.1.0/rcmip-emissions-annual-means-v5-1-0.csv
+        sha256: 2af9f90c42f9baa813199a902cdd83513fff157a0f96e1d1e6c48b58ffb8b0c1

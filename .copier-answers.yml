@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.5.0
+_src_path: https://github.com/climate-resource/copier-bookshelf-dataset
+author: Jared Lewis
+author_email: jared.lewis@climate-resource.com
+dataset_description: Emissions of greenhouse gases and air pollutants from RCMIP,
+    for use in climate models.
+dataset_name: rcmip-emissions
+dataset_name_human: RCMIP Emissions
+extra_recipes: []
+project_url: https://github.com/climate-resource/bookshelf-rcmip-emissions
