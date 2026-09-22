@@ -16,6 +16,7 @@ defaults:
   title: "RCMIP Emissions"
   description: "Emissions of greenhouse gases and air pollutants from RCMIP, for use in climate models."
   publisher: RCMIP
+  publisher_url: https://www.rcmip.org
   homepage_url: https://www.rcmip.org
   repository_url: https://github.com/climate-resource/bookshelf-rcmip-emissions
   visibility: public
@@ -33,6 +34,8 @@ build:
 books:
   - version: "v5.1.0"
     license: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    citation: "Zebedee Nicholls. rcmip-emissions v5.1.0. https://www.rcmip.org"
     description: >-
       The RCMIP annual mean emissions protocol, version 5.1.0.
     resources:
