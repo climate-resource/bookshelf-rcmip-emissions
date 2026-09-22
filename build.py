@@ -11,6 +11,7 @@
 
 # %%
 import bookshelf
+import pandas as pd
 import scmdata
 
 # %%
@@ -24,7 +25,12 @@ build = bookshelf.setup()
 
 # %%
 raw = build.use("raw")
-rcmip_emissions = scmdata.ScmRun(str(raw.path), lowercase_cols=True)
+# pandas defaults to an approximate float parser whose last bit moves with the CPU,
+# so the digest of a recorded book would depend on the machine that built it.
+raw_data = pd.read_csv(raw.path, float_precision="round_trip")
+# `lowercase_cols` only applies when ScmRun reads the file, so it happens here instead.
+raw_data.columns = [str(column).lower() for column in raw_data.columns]
+rcmip_emissions = scmdata.ScmRun(raw_data)
 rcmip_emissions
 
 # %% [markdown]
