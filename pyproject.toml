@@ -5,7 +5,7 @@ description = "Emissions of greenhouse gases and air pollutants from RCMIP, for 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "bookshelf[publish]==1.0.0b13",
+    "bookshelf[publish]==1.0.0",
     "pandas>=2.2",
     "scmdata>=0.16.1",
 ]
